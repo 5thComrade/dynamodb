@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import Navbar from "@/components/custom/Navbar";
 
 const nunito = Nunito({
   weight: ["300", "400", "600"],
@@ -21,7 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} font-nunito font-light`}>
+      <body className={`${nunito.variable} flex gap-4 font-nunito font-light`}>
+        <Navbar />
         {children}
       </body>
     </html>
