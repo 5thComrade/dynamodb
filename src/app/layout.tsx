@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} flex gap-4 font-nunito font-light`}>
+      <body className={`${nunito.variable} px-8 font-nunito font-light`}>
         <Navbar />
         {children}
       </body>
