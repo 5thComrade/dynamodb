@@ -34,6 +34,13 @@ export const chapters = [
   },
   {
     id: 5,
+    chapter: 1,
+    type: pageType.section,
+    title: "When to use DynamoDB?",
+    href: "/chapter_1/1.2",
+  },
+  {
+    id: 6,
     chapter: 2,
     type: pageType.chapter,
     title: "Chapter 2: Core Concepts of DynamoDB?",
