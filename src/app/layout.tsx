@@ -1,7 +1,9 @@
 import "./globals.css";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Navbar from "@/components/custom/Navbar";
+import Loading from "./loading";
 
 const nunito = Nunito({
   weight: ["300", "400", "600"],
@@ -24,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${nunito.variable} px-8 font-nunito font-light`}>
         <Navbar />
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );
