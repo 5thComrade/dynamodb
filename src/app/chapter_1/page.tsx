@@ -1,8 +1,4 @@
-import {
-  PageTitle,
-  Paragraph,
-  SectionTitle,
-} from "@/components/custom/Typography";
+import { PageTitle, Paragraph } from "@/components/custom/Typography";
 import Footer from "@/components/custom/Footer";
 
 export default function Chapter_1() {

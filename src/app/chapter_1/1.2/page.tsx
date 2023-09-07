@@ -57,7 +57,7 @@ export default function chapter_1_2() {
         DynamoDB is a great fit, especially when you are mostly doing key-value
         lookups.
       </Paragraph>
-      <Footer previous="/chapter_1/1.1" next="/chapter_1/1.3" />
+      <Footer previous="/chapter_1/1.1" next="/chapter_2" />
     </main>
   );
 }
