@@ -24,9 +24,9 @@ export default function Home() {
         not free. Even though AWS offers a very generous free tier to explore
         its services I will not be able to open source my DynamoDB
         database(unless someone is ready to fund). <br />
-        <span className="font-semibold">Bring your own database,</span> this is
-        when the application becomes interactive. You will have to configure
-        this application to use your own DynamoDB instance. In the{" "}
+        <span className="font-semibold">Bring your own database,</span> and this
+        application becomes interactive. You will have to configure this
+        application to use your own DynamoDB instance. In the{" "}
         <Link href="/requirements">
           <span className="text-blue-500">next chapter</span>
         </Link>{" "}
