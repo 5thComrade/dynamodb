@@ -29,7 +29,7 @@ export default function Navbar() {
           <SheetTitle className="underline">Chapters</SheetTitle>
         </SheetHeader>
         <ScrollArea className="h-full">
-          <div className="mt-4 flex flex-col">
+          <div className="my-4 flex flex-col">
             {chapters.map((chapter) => {
               return (
                 <SheetClose asChild key={chapter.id}>
