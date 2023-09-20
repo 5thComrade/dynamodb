@@ -113,7 +113,14 @@ export const chapters = [
     id: 16,
     chapter: 3,
     type: pageType.section,
-    title: "3.6:  Overloading keys and indexes",
+    title: "3.6: Overloading keys and indexes",
     href: "/chapter_3/3.6",
+  },
+  {
+    id: 17,
+    chapter: 4,
+    type: pageType.chapter,
+    title: "3.6: The Three API Action Types",
+    href: "/chapter_4",
   },
 ];
