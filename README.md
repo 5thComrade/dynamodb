@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Setup
 
-## Getting Started
+## DynamoDB
 
-First, run the development server:
+- Create a dynamodb table and name the table "learn-dynamodb"
+- Set the Partition key as "pk" and set the Sort key as "sk"
+- Leave the default settings as is and go ahead with the table creation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## IAM
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Create a new IAM Policy
+- Select DynamoDB as the service
+- Under Actions allowed select "All DynamoDB actions"
+- Under Resources choose specific and add the table ARN. You will get the table ARN(Amazon Resource Name) from the table overview of the recently created table.
+- Click next and add the policy name as "learn-dynamodb-policy"
+- Then create the policy
+- Now lets create a new IAM User
+- Enter the user name as "learn-dynamodb-user"
+- DO NOT SELECT "Provide user access to the AWS Management Console - optional"
+- In the Set Permissions page, choose Attach policies directly and choose "learn-dynamodb-policy" (the policy we just created)
+- In the next page, review the details and create the user.
+- Now lets create the users access key
+- Select the user and click on "Create access key"
+- Select "Third-party service" from the use-cases options
+- Keep the access key and secret key safely and add this to this application .env.local file

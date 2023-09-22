@@ -9,7 +9,7 @@ import {
 
 type Props = {
   headers: string[];
-  tableData: any[];
+  tableData: { [index: string]: string | number | boolean }[]; // index signature in TypeScript
 };
 
 export default function CustomTable({ headers, tableData }: Props) {
