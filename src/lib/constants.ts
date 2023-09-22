@@ -1,3 +1,5 @@
+export const dbName = "learn-dynamodb"; // if you have a different table name, please update it here
+
 export const pageType = {
   chapter: "chapter",
   section: "section",
@@ -120,7 +122,7 @@ export const chapters = [
     id: 17,
     chapter: 4,
     type: pageType.chapter,
-    title: "3.6: The Three API Action Types",
+    title: "Chapter 4: The Three API Action Types",
     href: "/chapter_4",
   },
 ];

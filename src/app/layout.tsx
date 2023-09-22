@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${nunito.variable} px-8 font-nunito font-light`}>
         <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Toaster position="top-right" />
       </body>
     </html>
   );
