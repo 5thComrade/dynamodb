@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import toast from "react-hot-toast";
-import testDbConnectionService from "@/services/testDbConnection.service";
+import messageService from "@/services/message.service";
 
 type Inputs = {
   message: string;
@@ -23,7 +23,7 @@ const InputMessage = () => {
   const handleAddMessage: SubmitHandler<Inputs> = async (data) => {
     try {
       setDisableButton(true);
-      await testDbConnectionService.addMessageToDb(data.message);
+      await messageService.addMessageToDb(data.message);
       reset();
       setDisableButton(false);
     } catch (err) {
@@ -45,7 +45,7 @@ const InputMessage = () => {
         <Link href="/requirements">
           <span className="text-blue-500">requirements</span>
         </Link>{" "}
-        folder.
+        chapter.
       </p>
       <input
         type="text"

@@ -125,4 +125,18 @@ export const chapters = [
     title: "Chapter 4: The Three API Action Types",
     href: "/chapter_4",
   },
+  {
+    id: 18,
+    chapter: 4,
+    type: pageType.section,
+    title: "4.1: Item-based actions",
+    href: "/chapter_4/4.1",
+  },
+  {
+    id: 19,
+    chapter: 4,
+    type: pageType.section,
+    title: "4.2: Query",
+    href: "/chapter_4/4.2",
+  },
 ];
