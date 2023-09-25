@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
       const dbCommand = new PutCommand({
         TableName: dbName,
         Item: {
-          pk: `MESSAGE#${nanoid()}`,
+          pk: "message",
           sk: `MESSAGE#${nanoid()}`,
           message: parseResult.output.message,
         },

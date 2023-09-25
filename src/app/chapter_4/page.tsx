@@ -35,7 +35,7 @@ export default function Chapter_4() {
           const dbCommand = new PutCommand({
               TableName: dbName,
               Item: {
-                pk: "MESSAGE#1",
+                pk: "message",
                 sk: "MESSAGE#1",
                 message: requestBody.message,
               },
@@ -53,9 +53,25 @@ export default function Chapter_4() {
 
       <CodeBlock>
         {`
-          src/app/api/testDbConnection/route.ts
+          src/app/api/message/route.ts
         `}
       </CodeBlock>
+
+      <Paragraph className="mb-3">
+        In this chapter, we’ll learn about the core API actions with DynamoDB.
+        The API for DynamoDB is small but powerful. This makes it easy to learn
+        the core actions while still providing a flexible way to model and
+        interact with your data.
+      </Paragraph>
+      <Paragraph>1: Item-based actions</Paragraph>
+      <Paragraph>2: Queries</Paragraph>
+      <Paragraph>3: Scans</Paragraph>
+
+      <Paragraph className="mt-4">
+        The API actions are divided based on what you’re operating on. Operating
+        on specific items? Use the item-based actions. Operating on an item
+        collection? Use a Query. Operating on the whole table? Use a Scan.
+      </Paragraph>
       <Footer previous="/chapter_3/3.6" next="/chapter_4/4.1" />
     </main>
   );
