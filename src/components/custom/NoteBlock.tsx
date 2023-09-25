@@ -3,8 +3,11 @@ import { HelpCircle } from "lucide-react";
 
 const NoteBlock = () => {
   return (
-    <div className="my-4 flex items-center gap-4 rounded-md border border-black bg-yellow-100 p-4">
-      <HelpCircle />
+    <div className="my-4 flex items-center gap-3 rounded-md border border-black bg-yellow-100 p-4">
+      <div>
+        <HelpCircle />
+      </div>
+
       <p className="text-lg">
         For interactivity with database, please complete the steps in{" "}
         <Link href="/requirements">
