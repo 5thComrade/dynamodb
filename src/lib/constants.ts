@@ -139,4 +139,25 @@ export const chapters = [
     title: "4.2: Query",
     href: "/chapter_4/4.2",
   },
+  {
+    id: 20,
+    chapter: 4,
+    type: pageType.section,
+    title: "4.3: Scan",
+    href: "/chapter_4/4.3",
+  },
+  {
+    id: 21,
+    chapter: 4,
+    type: pageType.section,
+    title: "4.4: How DynamoDB enforces efficiency",
+    href: "/chapter_4/4.4",
+  },
+  {
+    id: 22,
+    chapter: 5,
+    type: pageType.chapter,
+    title: "Chapter 5: Using the DynamoDB API",
+    href: "/chapter_5",
+  },
 ];
