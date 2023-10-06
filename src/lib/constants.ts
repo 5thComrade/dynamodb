@@ -160,4 +160,25 @@ export const chapters = [
     title: "Chapter 5: Using the DynamoDB API",
     href: "/chapter_5",
   },
+  {
+    id: 23,
+    chapter: 5,
+    type: pageType.section,
+    title: "5.1: Learn how expression names and values work",
+    href: "/chapter_5/5.1",
+  },
+  {
+    id: 24,
+    chapter: 5,
+    type: pageType.section,
+    title: "5.2: Don’t use an ORM",
+    href: "/chapter_5/5.2",
+  },
+  {
+    id: 26,
+    chapter: 5,
+    type: pageType.section,
+    title: "5.3: Understand the optional properties on individual requests",
+    href: "/chapter_5/5.3",
+  },
 ];
