@@ -4,7 +4,7 @@ import Footer from "@/components/custom/Footer";
 export default function Chapter_5() {
   return (
     <main>
-      <PageTitle>Chapter 5: </PageTitle>
+      <PageTitle>Chapter 5: Using the DynamoDB API</PageTitle>
       <Paragraph>
         The biggest hurdle in learning DynamoDB is the mindset shift required in
         learning the data modeling principles. Once you get the principles down
