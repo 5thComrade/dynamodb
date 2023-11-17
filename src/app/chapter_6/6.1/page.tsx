@@ -2,6 +2,7 @@ import Footer from "@/components/custom/Footer";
 import { PageTitle, Paragraph } from "@/components/custom/Typography";
 import { Separator } from "@/components/ui/separator";
 import GetCustomers from "../_components/GetCustomers";
+import GetCustomerFromPhone from "../_components/GetCustomerFromPhone";
 
 export default function chapter_6_1() {
   return (
@@ -39,6 +40,8 @@ export default function chapter_6_1() {
         In our example, we could use it to find a customer using their phone
         number.
       </Paragraph>
+
+      <GetCustomerFromPhone />
 
       <Footer previous="/chapter_6" next="/chapter_6/6.2" />
     </main>
