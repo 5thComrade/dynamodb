@@ -1,5 +1,9 @@
 export const dbName = "learn-dynamodb"; // if you have a different table name, please update it here
 
+export const phoneRegex = /^\d{10}$/;
+export const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+export const zipcodeRegex = /^\d{6}$/;
+
 export const pageType = {
   chapter: "chapter",
   section: "section",
@@ -180,5 +184,47 @@ export const chapters = [
     type: pageType.section,
     title: "5.3: Understand the optional properties on individual requests",
     href: "/chapter_5/5.3",
+  },
+  {
+    id: 27,
+    chapter: 6,
+    type: pageType.chapter,
+    title: "Chapter 6: Expressions",
+    href: "/chapter_6",
+  },
+  {
+    id: 28,
+    chapter: 6,
+    type: pageType.section,
+    title: "6.1: Key Condition Expressions",
+    href: "/chapter_6/6.1",
+  },
+  {
+    id: 29,
+    chapter: 6,
+    type: pageType.section,
+    title: "6.2: Filter Expressions",
+    href: "/chapter_6/6.2",
+  },
+  {
+    id: 30,
+    chapter: 6,
+    type: pageType.section,
+    title: "6.3: Projection expressions",
+    href: "/chapter_6/6.3",
+  },
+  {
+    id: 31,
+    chapter: 6,
+    type: pageType.section,
+    title: "6.4: Condition Expressions",
+    href: "/chapter_6/6.4",
+  },
+  {
+    id: 32,
+    chapter: 6,
+    type: pageType.section,
+    title: "6.5: Update Expressions",
+    href: "/chapter_6/6.5",
   },
 ];
