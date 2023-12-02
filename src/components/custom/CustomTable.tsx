@@ -34,8 +34,8 @@ export default function CustomTable({ headers, tableData }: Props) {
                 {index === 0
                   ? `Partition key: ${item}`
                   : index === 1
-                  ? `Sort key: ${item}`
-                  : item}
+                    ? `Sort key: ${item}`
+                    : item}
               </TableHead>
             );
           })}

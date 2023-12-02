@@ -116,6 +116,87 @@ class CustomerService extends AxiosService {
       throw err;
     }
   }
+
+  // get all customers filtered by their zipcode
+  async getCustomersByZipcode(zipcode: string) {
+    const CustomerSchema = object({
+      count: number(),
+      scannedCount: number(),
+      items: array(
+        object({
+          pk: string(),
+          sk: string(),
+          firstName: string(),
+          lastName: string(),
+          phone: string(),
+          email: string(),
+          zipcode: string(),
+        })
+      ),
+    });
+    const axiosConfigObj = {
+      method: "GET",
+      url: "/api/allCustomersByZip",
+      requestConfig: {
+        params: {
+          zipcode: zipcode,
+        },
+      },
+    };
+
+    try {
+      const response = await super.requestWithAxios(axiosConfigObj);
+
+      const parseResult = safeParse(CustomerSchema, response.data);
+      if (response.status === 200 && parseResult.success) {
+        return parseResult.output;
+      } else {
+        throw new Error("fetching customers failed!");
+      }
+    } catch (err) {
+      console.log("CustomerService getCustomersByZipcode error: ", err);
+      throw err;
+    }
+  }
+
+  // get all customers from the database but only selected attributes
+  async getAllCustomersFromDbProjected() {
+    const AllCustomersSchema = object({
+      count: number(),
+      scannedCount: number(),
+      items: array(
+        object({
+          pk: string(),
+          sk: string(),
+          firstName: string(),
+          lastName: string(),
+          phone: string(),
+        })
+      ),
+    });
+    const axiosConfigObj = {
+      method: "GET",
+      url: "/api/allCustomersProjected",
+      requestConfig: {},
+    };
+
+    try {
+      const response = await super.requestWithAxios(axiosConfigObj);
+
+      const parseResult = safeParse(AllCustomersSchema, response.data);
+      if (response.status === 200 && parseResult.success) {
+        return parseResult.output;
+      } else {
+        throw new Error("fetching all customers failed!");
+      }
+    } catch (err) {
+      console.log(
+        "CustomerService getAllCustomersFromDbProjected error: ",
+        err
+      );
+      throw err;
+    }
+  }
 }
 
 const customerService = new CustomerService();
