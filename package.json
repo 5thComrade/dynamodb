@@ -16,7 +16,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.417.0",
     "@aws-sdk/lib-dynamodb": "^3.417.0",
-    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-scroll-area": "^1.0.4",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
