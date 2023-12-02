@@ -32,6 +32,10 @@ export async function POST(request: NextRequest) {
           email: parseResult.output.customer.email,
           zipcode: parseResult.output.customer.zipcode,
         },
+        ConditionExpression: "attribute_not_exists(#phone_key)",
+        ExpressionAttributeNames: {
+          "#phone_key": "phone",
+        },
       });
 
       const dbResponse = await ddbDocClient.send(dbCommand);
