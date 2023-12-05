@@ -197,6 +197,43 @@ class CustomerService extends AxiosService {
       throw err;
     }
   }
+
+  // update customer details
+  async updateCustomer(
+    phone: string,
+    updates: {
+      firstName?: string;
+      lastName?: string;
+      email?: string;
+      zipcode?: string;
+    }
+  ) {
+    const axiosConfigObj = {
+      method: "PATCH",
+      url: "/api/customer",
+      requestConfig: {
+        data: {
+          customer: {
+            phone: phone,
+            updates: updates,
+          },
+        },
+      },
+    };
+
+    try {
+      const response = await super.requestWithAxios(axiosConfigObj);
+
+      if (response.status === 201) {
+        toast.success("Customer successfully updated!");
+      } else {
+        toast.error("Customer not updated! Try again.");
+      }
+    } catch (err) {
+      console.log("TestDbConnection updateCustomer error: ", err);
+      throw err;
+    }
+  }
 }
 
 const customerService = new CustomerService();
