@@ -45,7 +45,7 @@ const AddCustomerForm = () => {
     >
       <p className="text-sm">{`Fill in the details and click the "Add Customer" button. The customer will get saved in your DynamoDB table.`}</p>
       <p className="text-sm">
-        For the message to get saved in your table, you must complete the steps
+        For the customer to get saved in your table, you must complete the steps
         in{" "}
         <Link href="/requirements">
           <span className="text-blue-500">requirements</span>
