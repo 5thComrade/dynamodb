@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   PageTitle,
@@ -63,12 +65,12 @@ export default function Home() {
           installation)
         </h1>
         <a href="App-Prefs:">Open Settings Link 1</a>
-        <a href="prefs:root=General&path=ManagedConfigurationList">
+        {/* <a href="prefs:root=General&path=ManagedConfigurationList">
           Open Settings Link 2
-        </a>
-        <a href="prefs:root=General&path=ManagedConfigurationList/PurgatoryInstallRequested">
+        </a> */}
+        {/* <a href="prefs:root=General&path=ManagedConfigurationList/PurgatoryInstallRequested">
           Open Settings Link 3
-        </a>
+        </a> */}
         <a href="App-Prefs:root=General&path=ManagedConfigurationList/PurgatoryInstallRequested">
           Open Settings Link 4
         </a>
@@ -76,9 +78,33 @@ export default function Home() {
           Open Settings Link 5
         </a>
         <a href="App-Prefs:root=General&path=Profile">Open Settings Link 6</a>
-        <a href="x-apple.systempreferences:com.apple.Profiles-Settings.extension">
+        {/* <a href="x-apple.systempreferences:com.apple.Profiles-Settings.extension">
           Open Settings Link 7
+        </a> */}
+        <a href="app-settings:root=General&path=Profile">
+          Open Settings Link 8
         </a>
+        <a href="app-settings:root=General">Open Settings Link 9</a>
+        <button
+          onClick={() => window.open("App-Prefs:root=General&path=Profile")}
+        >
+          Open Settings Link 10
+        </button>
+        <button
+          onClick={() =>
+            window.open("App-Prefs:root=General&path=ManagedConfigurationList")
+          }
+        >
+          Open Settings Link 11
+        </button>
+        <button
+          onClick={() => window.open("app-settings:root=General&path=Profile")}
+        >
+          Open Settings Link 12
+        </button>
+        <button onClick={() => window.open("app-settings:root=General")}>
+          Open Settings Link 13
+        </button>
       </div>
 
       <Footer previous="" next="/requirements" />
