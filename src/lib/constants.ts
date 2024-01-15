@@ -227,4 +227,25 @@ export const chapters = [
     title: "6.5: Update Expressions",
     href: "/chapter_6/6.5",
   },
+  {
+    id: 33,
+    chapter: 7,
+    type: pageType.chapter,
+    title: "Chapter 7: How to approach data modeling in DynamoDB",
+    href: "/chapter_7",
+  },
+  {
+    id: 34,
+    chapter: 7,
+    type: pageType.section,
+    title: "7.1: Differences with relational databases",
+    href: "/chapter_7/7.1",
+  },
+  {
+    id: 35,
+    chapter: 7,
+    type: pageType.section,
+    title: "7.2. Steps for Modeling with DynamoDB",
+    href: "/chapter_7/7.2",
+  },
 ];
