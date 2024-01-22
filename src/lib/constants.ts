@@ -248,4 +248,11 @@ export const chapters = [
     title: "7.2. Steps for Modeling with DynamoDB",
     href: "/chapter_7/7.2",
   },
+  {
+    id: 36,
+    chapter: 8,
+    type: pageType.chapter,
+    title: "8. The What, Why, and When of Single-Table Design in DynamoDB",
+    href: "/chapter_8",
+  },
 ];
