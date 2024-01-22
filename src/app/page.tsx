@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   PageTitle,
@@ -59,53 +57,6 @@ export default function Home() {
       >
         Antony Chiramel
       </a>
-      <div className="mt-6 flex flex-col items-center gap-3">
-        <h1 className="text-xl">
-          Open System Preferences on iOS device(preferably straight to profile
-          installation)
-        </h1>
-        <a href="App-Prefs:">Open Settings Link 1</a>
-        {/* <a href="prefs:root=General&path=ManagedConfigurationList">
-          Open Settings Link 2
-        </a> */}
-        {/* <a href="prefs:root=General&path=ManagedConfigurationList/PurgatoryInstallRequested">
-          Open Settings Link 3
-        </a> */}
-        <a href="App-Prefs:root=General&path=ManagedConfigurationList/PurgatoryInstallRequested">
-          Open Settings Link 4
-        </a>
-        <a href="App-Prefs:root=General&path=ManagedConfigurationList">
-          Open Settings Link 5
-        </a>
-        <a href="App-Prefs:root=General&path=Profile">Open Settings Link 6</a>
-        {/* <a href="x-apple.systempreferences:com.apple.Profiles-Settings.extension">
-          Open Settings Link 7
-        </a> */}
-        <a href="app-settings:root=General&path=Profile">
-          Open Settings Link 8
-        </a>
-        <a href="app-settings:root=General">Open Settings Link 9</a>
-        <button
-          onClick={() => window.open("App-Prefs:root=General&path=Profile")}
-        >
-          Open Settings Link 10
-        </button>
-        <button
-          onClick={() =>
-            window.open("App-Prefs:root=General&path=ManagedConfigurationList")
-          }
-        >
-          Open Settings Link 11
-        </button>
-        <button
-          onClick={() => window.open("app-settings:root=General&path=Profile")}
-        >
-          Open Settings Link 12
-        </button>
-        <button onClick={() => window.open("app-settings:root=General")}>
-          Open Settings Link 13
-        </button>
-      </div>
 
       <Footer previous="" next="/requirements" />
     </main>
