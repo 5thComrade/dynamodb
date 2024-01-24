@@ -245,7 +245,7 @@ export const chapters = [
     id: 35,
     chapter: 7,
     type: pageType.section,
-    title: "7.2. Steps for Modeling with DynamoDB",
+    title: "7.2: Steps for Modeling with DynamoDB",
     href: "/chapter_7/7.2",
   },
   {
@@ -254,5 +254,33 @@ export const chapters = [
     type: pageType.chapter,
     title: "8. The What, Why, and When of Single-Table Design in DynamoDB",
     href: "/chapter_8",
+  },
+  {
+    id: 37,
+    chapter: 8,
+    type: pageType.section,
+    title: "8.1: What is single-table design",
+    href: "/chapter_8/8.1",
+  },
+  {
+    id: 38,
+    chapter: 8,
+    type: pageType.section,
+    title: "8.2: Downsides of a single-table design",
+    href: "/chapter_8/8.2",
+  },
+  {
+    id: 39,
+    chapter: 8,
+    type: pageType.section,
+    title: "8.3: When not to use single-table design",
+    href: "/chapter_8/8.3",
+  },
+  {
+    id: 40,
+    chapter: 9,
+    type: pageType.chapter,
+    title: "9. From modeling to implementation",
+    href: "/chapter_9",
   },
 ];
