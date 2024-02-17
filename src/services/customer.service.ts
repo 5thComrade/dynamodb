@@ -1,14 +1,7 @@
 import toast from "react-hot-toast";
 import { string, safeParse, object, number, array } from "valibot";
 import { AxiosService } from "@/services/axios.service";
-
-type Customer = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  zipcode: string;
-};
+import { type CustomerSchemaType } from "@/lib/schemas";
 
 class CustomerService extends AxiosService {
   // get all customers from the database
@@ -50,7 +43,7 @@ class CustomerService extends AxiosService {
   }
 
   // add a new customer to db
-  async addCustomerToDb(customer: Customer) {
+  async addCustomerToDb(customer: CustomerSchemaType) {
     const axiosConfigObj = {
       method: "POST",
       url: "/api/customer",
