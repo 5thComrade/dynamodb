@@ -9,17 +9,10 @@ import CustomTable from "@/components/custom/CustomTable";
 import CodeBlock from "@/components/custom/CodeBlock";
 import { Paragraph } from "@/components/custom/Typography";
 import { phoneRegex } from "@/lib/constants";
+import { type CustomerSchemaType } from "@/lib/schemas";
 
 type Inputs = {
   phone: string;
-};
-
-type Customer = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  zipcode: string;
 };
 
 const tableHeaders = [
@@ -30,6 +23,7 @@ const tableHeaders = [
   "phone",
   "email",
   "zipcode",
+  "shippingAddresses",
 ];
 
 const GetCustomerFromPhone = () => {
@@ -41,7 +35,7 @@ const GetCustomerFromPhone = () => {
   } = useForm<Inputs>();
 
   const [disableButton, setDisableButton] = useState<boolean>(false);
-  const [customer, setCustomer] = useState<Customer[] | []>([]);
+  const [customer, setCustomer] = useState<CustomerSchemaType[] | []>([]);
 
   const handleSearchCustomer: SubmitHandler<Inputs> = async (data) => {
     try {

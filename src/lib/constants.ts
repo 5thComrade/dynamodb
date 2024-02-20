@@ -340,4 +340,18 @@ export const chapters = [
     title: "11. Strategies for one-to-many relationships",
     href: "/chapter_11",
   },
+  {
+    id: 49,
+    chapter: 11.1,
+    type: pageType.section,
+    title: "11.1: Denormalization by using a complex attribute",
+    href: "/chapter_11/11.1",
+  },
+  {
+    id: 50,
+    chapter: 11.2,
+    type: pageType.section,
+    title: "11.2: Denormalization by duplicating data",
+    href: "/chapter_11/11.2",
+  },
 ];

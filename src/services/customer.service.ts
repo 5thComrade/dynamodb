@@ -1,5 +1,14 @@
 import toast from "react-hot-toast";
-import { string, safeParse, object, number, array } from "valibot";
+import {
+  string,
+  safeParse,
+  object,
+  number,
+  array,
+  optional,
+  record,
+  picklist,
+} from "valibot";
 import { AxiosService } from "@/services/axios.service";
 import { type CustomerSchemaType } from "@/lib/schemas";
 
@@ -18,6 +27,16 @@ class CustomerService extends AxiosService {
           phone: string(),
           email: string(),
           zipcode: string(),
+          shippingAddresses: optional(
+            record(
+              picklist(["home", "business"]),
+              object({
+                streetAddress: string(),
+                postalCode: string(),
+                country: string(),
+              })
+            )
+          ),
         })
       ),
     });
@@ -82,6 +101,16 @@ class CustomerService extends AxiosService {
           phone: string(),
           email: string(),
           zipcode: string(),
+          shippingAddresses: optional(
+            record(
+              picklist(["home", "business"]),
+              object({
+                streetAddress: string(),
+                postalCode: string(),
+                country: string(),
+              })
+            )
+          ),
         })
       ),
     });
@@ -124,6 +153,16 @@ class CustomerService extends AxiosService {
           phone: string(),
           email: string(),
           zipcode: string(),
+          shippingAddresses: optional(
+            record(
+              picklist(["home", "business"]),
+              object({
+                streetAddress: string(),
+                postalCode: string(),
+                country: string(),
+              })
+            )
+          ),
         })
       ),
     });
