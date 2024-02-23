@@ -354,4 +354,25 @@ export const chapters = [
     title: "11.2: Denormalization by duplicating data",
     href: "/chapter_11/11.2",
   },
+  {
+    id: 51,
+    chapter: 11.3,
+    type: pageType.section,
+    title: "11.3: Composite primary key + the Query API action",
+    href: "/chapter_11/11.3",
+  },
+  {
+    id: 52,
+    chapter: 11.4,
+    type: pageType.section,
+    title: "11.4: Secondary index + the Query API action",
+    href: "/chapter_11/11.4",
+  },
+  {
+    id: 53,
+    chapter: 11.5,
+    type: pageType.section,
+    title: "11.5: Composite sort keys with hierarchical data",
+    href: "/chapter_11/11.5",
+  },
 ];
