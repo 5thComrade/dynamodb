@@ -375,4 +375,11 @@ export const chapters = [
     title: "11.5: Composite sort keys with hierarchical data",
     href: "/chapter_11/11.5",
   },
+  {
+    id: 54,
+    chapter: 12,
+    type: pageType.chapter,
+    title: "12. Strategies for many-to-many relationships",
+    href: "/chapter_12",
+  },
 ];
