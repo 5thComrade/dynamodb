@@ -3,16 +3,11 @@ import { string, safeParse, object, optional } from "valibot";
 import { PutCommand, QueryCommand, UpdateCommand } from "@aws-sdk/lib-dynamodb";
 import ddbDocClient from "@/lib/clients/dynamoDBClient";
 import { dbName } from "@/lib/constants";
+import { CustomerSchema } from "@/lib/schemas";
 
 export async function POST(request: NextRequest) {
   const RequestBodySchema = object({
-    customer: object({
-      firstName: string(),
-      lastName: string(),
-      phone: string(),
-      email: string(),
-      zipcode: string(),
-    }),
+    customer: CustomerSchema,
   });
 
   try {
@@ -31,6 +26,7 @@ export async function POST(request: NextRequest) {
           phone: parseResult.output.customer.phone,
           email: parseResult.output.customer.email,
           zipcode: parseResult.output.customer.zipcode,
+          shippingAddresses: parseResult.output.customer.shippingAddresses,
         },
         ConditionExpression: "attribute_not_exists(#phone_key)",
         ExpressionAttributeNames: {

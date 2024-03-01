@@ -9,16 +9,9 @@ import CustomTable from "@/components/custom/CustomTable";
 import CodeBlock from "@/components/custom/CodeBlock";
 import { Paragraph } from "@/components/custom/Typography";
 import { zipcodeRegex } from "@/lib/constants";
+import { type CustomerSchemaType } from "@/lib/schemas";
 
 type Inputs = {
-  zipcode: string;
-};
-
-type Customer = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
   zipcode: string;
 };
 
@@ -30,6 +23,7 @@ const tableHeaders = [
   "phone",
   "email",
   "zipcode",
+  "shippingAddresses",
 ];
 
 const FilterCustomersByZipcode = () => {
@@ -41,7 +35,7 @@ const FilterCustomersByZipcode = () => {
   } = useForm<Inputs>();
 
   const [disableButton, setDisableButton] = useState<boolean>(false);
-  const [customers, setCustomers] = useState<Customer[] | []>([]);
+  const [customers, setCustomers] = useState<CustomerSchemaType[] | []>([]);
 
   const handleSearchCustomers: SubmitHandler<Inputs> = async (data) => {
     try {

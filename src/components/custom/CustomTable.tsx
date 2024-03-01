@@ -9,7 +9,9 @@ import {
 
 type Props = {
   headers: string[];
-  tableData: { [index: string]: string | number | boolean }[]; // index signature in TypeScript
+  tableData: {
+    [index: string]: string | number | boolean | object | undefined;
+  }[]; // index signature in TypeScript
 };
 
 export default function CustomTable({ headers, tableData }: Props) {
@@ -46,7 +48,15 @@ export default function CustomTable({ headers, tableData }: Props) {
           return (
             <TableRow key={index}>
               {headers.map((i) => {
-                return <TableCell key={i}>{item?.[i]}</TableCell>;
+                if (typeof item?.[i] === "object") {
+                  return (
+                    <TableCell key={i}>{JSON.stringify(item?.[i])}</TableCell>
+                  );
+                } else {
+                  return (
+                    <TableCell key={i}>{JSON.stringify(item?.[i])}</TableCell>
+                  );
+                }
               })}
             </TableRow>
           );

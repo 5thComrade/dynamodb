@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import toast from "react-hot-toast";
 import { phoneRegex, emailRegex, zipcodeRegex } from "@/lib/constants";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import customerService from "@/services/customer.service";
 
 type Inputs = {
@@ -13,6 +15,13 @@ type Inputs = {
   phone: string;
   email: string;
   zipcode: string;
+  shippingAddresses: {
+    [type: string]: {
+      streetAddress: string;
+      postalCode: string;
+      country: string;
+    };
+  };
 };
 
 const AddCustomerForm = () => {
@@ -24,6 +33,7 @@ const AddCustomerForm = () => {
   } = useForm<Inputs>();
 
   const [disableButton, setDisableButton] = useState<boolean>(false);
+  const [pickedAddressType, setPickedAddressType] = useState<string>("home");
 
   const handleAddCustomer: SubmitHandler<Inputs> = async (data) => {
     try {
@@ -116,6 +126,68 @@ const AddCustomerForm = () => {
         <span className="text-xs text-red-500">
           Please enter a valid zipcode that is 6 digits long!
         </span>
+      )}
+
+      <p className="my-4 text-lg">Shipping address</p>
+
+      <RadioGroup
+        defaultValue="home"
+        onValueChange={(addressType: "home" | "business") => {
+          setPickedAddressType(addressType);
+        }}
+      >
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="home" id="r1" />
+          <Label htmlFor="r1">Home</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="business" id="r2" />
+          <Label htmlFor="r2">Business</Label>
+        </div>
+      </RadioGroup>
+
+      {/* Street Address */}
+      <input
+        type="text"
+        placeholder="Street Address"
+        className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 outline-none focus:border-black focus:ring-black md:w-1/2"
+        {...register(`shippingAddresses.${pickedAddressType}.streetAddress`, {
+          required: true,
+        })}
+      />
+      {errors?.shippingAddresses?.[pickedAddressType]?.streetAddress && (
+        <span className="text-xs text-red-500">
+          Please enter the street address!
+        </span>
+      )}
+
+      {/* Postal Code */}
+      <input
+        type="text"
+        placeholder="Postal Code"
+        className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 outline-none focus:border-black focus:ring-black md:w-1/2"
+        {...register(`shippingAddresses.${pickedAddressType}.postalCode`, {
+          required: true,
+          pattern: zipcodeRegex,
+        })}
+      />
+      {errors.shippingAddresses?.[pickedAddressType]?.postalCode && (
+        <span className="text-xs text-red-500">
+          Please enter a valid postal code that is 6 digits long!
+        </span>
+      )}
+
+      {/* Country */}
+      <input
+        type="text"
+        placeholder="Country"
+        className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 outline-none focus:border-black focus:ring-black md:w-1/2"
+        {...register(`shippingAddresses.${pickedAddressType}.country`, {
+          required: true,
+        })}
+      />
+      {errors.shippingAddresses?.[pickedAddressType]?.country && (
+        <span className="text-xs text-red-500">Please enter the country!</span>
       )}
 
       <button

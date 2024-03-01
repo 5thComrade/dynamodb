@@ -5,14 +5,7 @@ import toast from "react-hot-toast";
 import customerService from "@/services/customer.service";
 import CustomTable from "@/components/custom/CustomTable";
 import CodeBlock from "@/components/custom/CodeBlock";
-
-type Customer = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  zipcode: string;
-};
+import { type CustomerSchemaType } from "@/lib/schemas";
 
 const tableHeaders = [
   "pk",
@@ -22,10 +15,11 @@ const tableHeaders = [
   "phone",
   "email",
   "zipcode",
+  "shippingAddresses",
 ];
 
 const GetCustomers = () => {
-  const [customers, setCustomers] = useState<Customer[] | []>([]);
+  const [customers, setCustomers] = useState<CustomerSchemaType[] | []>([]);
 
   const getAllCustomers = async () => {
     try {
